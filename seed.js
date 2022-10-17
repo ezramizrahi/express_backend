@@ -21,7 +21,7 @@ const createFakeFilm = () => {
 };
 
 const createFakeFilms = (numFilms = 5) => {
-    return Array.from({length: numUsers}, createFakeFilm);
+    return Array.from({length: numFilms}, createFakeFilm);
 };
 
 const fakeFilmSeedData = createFakeFilms(5);
