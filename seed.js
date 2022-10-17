@@ -10,6 +10,22 @@ const randomDirector = faker.name.fullName();
 const randomDesc = faker.lorem.words(10);
 const randomYear = faker.random.numeric(4);
 
+const createFakeFilm = () => {
+    return {
+      id: faker.random.alphaNumeric(10),
+      title: faker.lorem.words(3),
+      director: faker.lorem.fullName(),
+      description: faker.lorem.words(10),
+      year: faker.random.numeric(4),
+    };
+};
+
+const createFakeFilms = (numFilms = 5) => {
+    return Array.from({length: numUsers}, createFakeFilm);
+};
+
+const fakeFilmSeedData = createFakeFilms(5);
+console.log(fakeFilmSeedData)
 
 mongoose.connect(
     connectionString, {
@@ -34,7 +50,7 @@ const seedData = [
 
 const seedDB = async () => {
     await Film.deleteMany({});
-    await Film.insertMany(seedData);
+    await Film.insertMany(fakeFilmSeedData);
 };
 
 seedDB().then(() => {
