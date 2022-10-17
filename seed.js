@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
-const Film = require('./models/Film');
 require('dotenv').config();
-const connectionString = process.env.ATLAS_URI;
+const mongoose = require('mongoose');
 const { faker } = require('@faker-js/faker');
+const Film = require('./models/Film');
+const connectionString = process.env.ATLAS_URI;
 
 const createFakeFilm = () => {
     return {
