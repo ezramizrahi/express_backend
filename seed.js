@@ -14,7 +14,7 @@ const createFakeFilm = () => {
     return {
       id: faker.random.alphaNumeric(10),
       title: faker.lorem.words(3),
-      director: faker.lorem.fullName(),
+      director: faker.name.fullName(),
       description: faker.lorem.words(10),
       year: faker.random.numeric(4),
     };
