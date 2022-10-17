@@ -14,9 +14,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-        env:
+      - env:
           ATLAS_URI: ${{ secrets.ATLAS_URI }}
-        run: npm run seed
+      - run: npm run seed
       - name: Install Postman CLI
         run: |
           curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
