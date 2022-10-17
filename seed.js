@@ -4,12 +4,6 @@ require('dotenv').config();
 const connectionString = process.env.ATLAS_URI;
 const { faker } = require('@faker-js/faker');
 
-const randomID = faker.random.alphaNumeric(10);
-const randomTitle = faker.lorem.words(3);
-const randomDirector = faker.name.fullName();
-const randomDesc = faker.lorem.words(10);
-const randomYear = faker.random.numeric(4);
-
 const createFakeFilm = () => {
     return {
       id: faker.random.alphaNumeric(10),
@@ -25,7 +19,6 @@ const createFakeFilms = (numFilms = 5) => {
 };
 
 const fakeFilmSeedData = createFakeFilms(5);
-console.log(fakeFilmSeedData)
 
 mongoose.connect(
     connectionString, {
@@ -37,16 +30,6 @@ mongoose.connect(
     .catch((err) => {
         console.log(err);
     });
-
-const seedData = [
-    {
-        id: randomID,
-        title: randomTitle,
-        director: randomDirector,
-        description: randomDesc,
-        year: randomYear
-    }
-];
 
 const seedDB = async () => {
     await Film.deleteMany({});
