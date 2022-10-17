@@ -2,6 +2,14 @@ const mongoose = require('mongoose');
 const Film = require('./models/Film');
 require('dotenv').config();
 const connectionString = process.env.ATLAS_URI;
+import { faker } from '@faker-js/faker';
+
+const randomID = faker.random.alphaNumeric(10);
+const randomTitle = faker.lorem.words(3);
+const randomDirector = faker.name.fullName();
+const randomDesc = faker.lorem.words(10);
+const randomYear = faker.random.numeric(4);
+
 
 mongoose.connect(
     connectionString, {
@@ -16,11 +24,11 @@ mongoose.connect(
 
 const seedData = [
     {
-        id: '111',
-        title: 'seed title',
-        director: 'seed director',
-        description: 'seed desc',
-        year: 'seed year'
+        id: randomID,
+        title: randomTitle,
+        director: randomDirector,
+        description: randomDesc,
+        year: randomYear
     }
 ];
 
