@@ -25,7 +25,7 @@ const seedData = [
 ];
 
 const seedDB = async () => {
-    // await Film.deleteMany({});
+    await Film.deleteMany({});
     await Film.insertMany(seedData);
 };
 
