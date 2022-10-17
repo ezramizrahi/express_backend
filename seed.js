@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Film = require('./models/Film');
 require('dotenv').config();
 const connectionString = process.env.ATLAS_URI;
-import { faker } from '@faker-js/faker';
+const { faker } = require('@faker-js/faker');
 
 const randomID = faker.random.alphaNumeric(10);
 const randomTitle = faker.lorem.words(3);
